@@ -1,0 +1,53 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="riverSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dcefe9"/>
+      <stop offset="100%" stop-color="#b7d9d0"/>
+    </linearGradient>
+    <linearGradient id="bank1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a6b5c"/>
+      <stop offset="100%" stop-color="#2e4436"/>
+    </linearGradient>
+    <linearGradient id="bank2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a4038"/>
+      <stop offset="100%" stop-color="#152019"/>
+    </linearGradient>
+    <linearGradient id="water1" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="#1f6f8a"/>
+      <stop offset="50%" stop-color="#3fa4b8"/>
+      <stop offset="100%" stop-color="#8fd6d1"/>
+    </linearGradient>
+    <linearGradient id="water2" x1="1" y1="0" x2="0" y2="0.4">
+      <stop offset="0%" stop-color="#0c4a5e"/>
+      <stop offset="100%" stop-color="#2f8fa3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#riverSky)"/>
+
+  <!-- far bank -->
+  <path d="M -20 260 Q 200 210 400 250 T 820 240 L 820 300 Q 600 270 400 300 T -20 310 Z" fill="url(#bank1)"/>
+
+  <!-- river body -->
+  <path d="M -20 300 Q 180 320 260 400 Q 340 480 260 560 Q 200 600 -20 600 Z" fill="url(#water2)"/>
+  <path d="M 820 290 Q 600 330 560 420 Q 520 500 620 560 Q 700 600 820 600 Z" fill="url(#water1)"/>
+  <path d="M -20 320 Q 250 340 400 430 Q 560 340 820 310 L 820 360 Q 560 400 400 480 Q 250 400 -20 380 Z" fill="url(#water1)" opacity="0.85"/>
+
+  <!-- flow lines -->
+  <g stroke="#e8f7f4" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round">
+    <path d="M 40 340 Q 250 370 400 440 Q 560 370 760 340"/>
+    <path d="M 60 400 Q 260 430 400 480 Q 540 430 740 400"/>
+    <path d="M 90 460 Q 270 480 400 520 Q 530 480 710 460"/>
+  </g>
+
+  <!-- near bank -->
+  <path d="M -20 560 Q 220 500 400 540 T 820 530 L 820 600 L -20 600 Z" fill="url(#bank2)"/>
+
+  <!-- reeds -->
+  <g stroke="#1c2b22" stroke-width="3" opacity="0.7">
+    <line x1="60" y1="590" x2="50" y2="530"/>
+    <line x1="80" y1="592" x2="95" y2="540"/>
+    <line x1="700" y1="588" x2="712" y2="535"/>
+    <line x1="730" y1="590" x2="718" y2="545"/>
+  </g>
+</svg>

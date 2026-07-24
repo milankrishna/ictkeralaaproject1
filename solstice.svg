@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glowCore" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff3d6"/>
+      <stop offset="35%" stop-color="#ffcf6b"/>
+      <stop offset="70%" stop-color="#e8843a"/>
+      <stop offset="100%" stop-color="#a3401f"/>
+    </radialGradient>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a1f3d"/>
+      <stop offset="45%" stop-color="#7a3350"/>
+      <stop offset="75%" stop-color="#c9633f"/>
+      <stop offset="100%" stop-color="#f2a94e"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241019"/>
+      <stop offset="100%" stop-color="#0d0509"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+
+  <!-- radiating rays -->
+  <g opacity="0.35" stroke="#ffcf6b" stroke-width="4">
+    <line x1="400" y1="330" x2="400" y2="20"/>
+    <line x1="400" y1="330" x2="180" y2="60"/>
+    <line x1="400" y1="330" x2="620" y2="60"/>
+    <line x1="400" y1="330" x2="60" y2="200"/>
+    <line x1="400" y1="330" x2="740" y2="200"/>
+    <line x1="400" y1="330" x2="120" y2="350"/>
+    <line x1="400" y1="330" x2="680" y2="350"/>
+  </g>
+
+  <!-- sun core -->
+  <circle cx="400" cy="330" r="150" fill="url(#glowCore)"/>
+
+  <!-- concentric rings -->
+  <circle cx="400" cy="330" r="150" fill="none" stroke="#fff3d6" stroke-width="2" opacity="0.5"/>
+  <circle cx="400" cy="330" r="185" fill="none" stroke="#ffcf6b" stroke-width="1.5" opacity="0.35"/>
+  <circle cx="400" cy="330" r="215" fill="none" stroke="#e8843a" stroke-width="1" opacity="0.25"/>
+
+  <!-- horizon silhouette -->
+  <path d="M -20 430 Q 150 400 300 420 Q 450 440 600 400 Q 700 380 820 420 L 820 600 L -20 600 Z" fill="url(#groundGrad)"/>
+
+  <!-- silhouette stones -->
+  <g fill="#0a0407">
+    <ellipse cx="180" cy="425" rx="30" ry="14"/>
+    <ellipse cx="560" cy="418" rx="40" ry="16"/>
+    <ellipse cx="650" cy="428" rx="22" ry="10"/>
+  </g>
+
+  <!-- reflection glow on ground -->
+  <ellipse cx="400" cy="440" rx="160" ry="18" fill="#ffcf6b" opacity="0.2"/>
+</svg>

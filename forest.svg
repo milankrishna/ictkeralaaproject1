@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="forestSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9d8c3"/>
+      <stop offset="45%" stop-color="#9fb89a"/>
+      <stop offset="100%" stop-color="#5d7d5f"/>
+    </linearGradient>
+    <linearGradient id="layer1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c9a78"/>
+      <stop offset="100%" stop-color="#5a7856"/>
+    </linearGradient>
+    <linearGradient id="layer2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4c6a4a"/>
+      <stop offset="100%" stop-color="#33482f"/>
+    </linearGradient>
+    <linearGradient id="layer3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26361f"/>
+      <stop offset="100%" stop-color="#141f10"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#forestSky)"/>
+
+  <!-- sun disc -->
+  <circle cx="620" cy="150" r="60" fill="#f4ead0" opacity="0.55"/>
+
+  <!-- fog band -->
+  <rect x="0" y="260" width="800" height="40" fill="#e9efe2" opacity="0.35"/>
+
+  <!-- far pine layer -->
+  <g fill="url(#layer1)" opacity="0.9">
+    <polygon points="40,340 80,240 120,340"/>
+    <polygon points="110,350 160,220 210,350"/>
+    <polygon points="200,340 240,250 280,340"/>
+    <polygon points="270,350 320,230 370,350"/>
+    <polygon points="350,345 400,240 450,345"/>
+    <polygon points="430,350 480,225 530,350"/>
+    <polygon points="500,340 545,250 590,340"/>
+    <polygon points="570,350 625,220 680,350"/>
+    <polygon points="650,345 700,245 750,345"/>
+    <polygon points="720,340 770,255 810,340"/>
+  </g>
+
+  <!-- fog band 2 -->
+  <rect x="0" y="330" width="800" height="35" fill="#dfe8d6" opacity="0.4"/>
+
+  <!-- mid pine layer -->
+  <g fill="url(#layer2)">
+    <polygon points="-20,440 40,290 100,440"/>
+    <polygon points="70,450 140,270 210,450"/>
+    <polygon points="180,440 250,280 320,440"/>
+    <polygon points="290,450 360,265 430,450"/>
+    <polygon points="400,440 470,285 540,440"/>
+    <polygon points="510,450 580,270 650,450"/>
+    <polygon points="610,440 680,290 750,440"/>
+    <polygon points="700,450 780,275 820,450"/>
+  </g>
+
+  <!-- fog band 3 -->
+  <rect x="0" y="420" width="800" height="30" fill="#d6e0cb" opacity="0.35"/>
+
+  <!-- near pine layer -->
+  <g fill="url(#layer3)">
+    <polygon points="-30,600 60,340 150,600"/>
+    <polygon points="110,600 220,320 330,600"/>
+    <polygon points="280,600 390,300 500,600"/>
+    <polygon points="450,600 560,330 670,600"/>
+    <polygon points="620,600 730,310 830,600"/>
+  </g>
+</svg>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Collection — Veloura</title>
+  <link rel="icon" href="data:,">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>body { padding-top: 76px; }</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg gallery-navbar fixed-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="gallery.html">Veloura<span>Gallery</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="art-display.html">Collection</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Sign In</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-gold btn-sm" href="signup.html">Join</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="py-5" style="border-bottom:1px solid var(--frame); padding-top:4rem !important;">
+    <div class="container reveal">
+      <p class="eyebrow mb-3">The Full Collection</p>
+      <h1 class="hero-title mb-3" style="font-size:clamp(2.2rem, 4vw, 3.2rem);">Five pieces, <em>three rooms</em>.</h1>
+      <p class="hero-lede mb-0">Every work currently on the wall at Veloura. Filter by room, or scroll the whole collection top to bottom.</p>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <div class="container">
+    <div class="d-flex flex-wrap gap-2 py-4 reveal" id="filterBar">
+      <button class="filter-pill active" data-filter="all">All Works</button>
+      <button class="filter-pill" data-filter="abstract">Luminous Abstract</button>
+      <button class="filter-pill" data-filter="landscape">Quiet Landscape</button>
+      <button class="filter-pill" data-filter="portrait">Portraiture</button>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <section class="pb-6" style="padding-bottom:5rem;">
+    <div class="container">
+      <div class="row g-4" id="artGrid">
+
+        <div class="col-md-6 col-lg-4 art-item reveal" data-category="abstract">
+          <a href="art1.html" class="stretched-link-wrap">
+            <div class="frame-card">
+              <div class="frame-media"><img src="aurora.svg" alt="Aurora Bloom by Lena Wren"></div>
+              <div class="placard">
+                <p class="art-meta">Luminous Abstract <span>· 2023</span></p>
+                <h3 class="art-title">Aurora Bloom</h3>
+                <p class="text-muted-gallery mb-3" style="font-size:0.85rem;">Lena Wren</p>
+                <span class="art-link">View piece
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 art-item reveal" data-category="landscape">
+          <a href="art2.html" class="stretched-link-wrap">
+            <div class="frame-card">
+              <div class="frame-media"><img src="forest.svg" alt="Silent Forest by Mateus Cole"></div>
+              <div class="placard">
+                <p class="art-meta">Quiet Landscape <span>· 2021</span></p>
+                <h3 class="art-title">Silent Forest</h3>
+                <p class="text-muted-gallery mb-3" style="font-size:0.85rem;">Mateus Cole</p>
+                <span class="art-link">View piece
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 art-item reveal" data-category="portrait">
+          <a href="art3.html" class="stretched-link-wrap">
+            <div class="frame-card">
+              <div class="frame-media"><img src="portrait.svg" alt="Portrait in Amber by Priya Nandan"></div>
+              <div class="placard">
+                <p class="art-meta">Portraiture <span>· 2019</span></p>
+                <h3 class="art-title">Portrait in Amber</h3>
+                <p class="text-muted-gallery mb-3" style="font-size:0.85rem;">Priya Nandan</p>
+                <span class="art-link">View piece
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 art-item reveal" data-category="landscape">
+          <a href="art4.html" class="stretched-link-wrap">
+            <div class="frame-card">
+              <div class="frame-media"><img src="river.svg" alt="River Flow by Oskar Lindqvist"></div>
+              <div class="placard">
+                <p class="art-meta">Quiet Landscape <span>· 2022</span></p>
+                <h3 class="art-title">River Flow</h3>
+                <p class="text-muted-gallery mb-3" style="font-size:0.85rem;">Oskar Lindqvist</p>
+                <span class="art-link">View piece
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 art-item reveal" data-category="abstract">
+          <a href="art5.html" class="stretched-link-wrap">
+            <div class="frame-card">
+              <div class="frame-media"><img src="solstice.svg" alt="Solstice Glow by Ingrid Halvorsen"></div>
+              <div class="placard">
+                <p class="art-meta">Luminous Abstract <span>· 2024</span></p>
+                <h3 class="art-title">Solstice Glow</h3>
+                <p class="text-muted-gallery mb-3" style="font-size:0.85rem;">Ingrid Halvorsen</p>
+                <span class="art-link">View piece
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="h-100 d-flex flex-column justify-content-center align-items-start p-4" style="background:var(--surface); border:1px dashed var(--frame-light); border-radius:2px; min-height:100%;">
+            <p class="small-caps-label mb-2">Coming Soon</p>
+            <h3 class="display-font mb-2" style="font-size:1.3rem;">A sixth room, opening this season.</h3>
+            <p class="text-muted-gallery mb-3">New work is being crated and shipped. Join as a member to be notified first.</p>
+            <a href="signup.html" class="art-link">Get notified
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="gallery-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div>
+        <a href="gallery.html" class="navbar-brand" style="font-size:1.1rem;">Lumen<span>Gallery</span></a>
+        <p class="mb-0 mt-1">Curated light. Quiet rooms. Real work.</p>
+      </div>
+      <div class="d-flex gap-4 flex-wrap">
+        <a href="gallery.html">Home</a>
+        <a href="art-display.html">Collection</a>
+        <a href="index.html">Sign In</a>
+        <a href="signup.html">Join</a>
+      </div>
+    </div>
+    <div class="container mt-4 pt-3" style="border-top:1px solid var(--frame);">
+      <small>&copy; 2026 Veloura. A student project — all artworks are original illustrations.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const items = document.querySelectorAll('.reveal:not(.is-visible)');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(i => obs.observe(i));
+
+      const pills = document.querySelectorAll('.filter-pill');
+      const cards = document.querySelectorAll('.art-item');
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          const filter = pill.dataset.filter;
+          cards.forEach(card => {
+            const show = filter === 'all' || card.dataset.category === filter;
+            card.style.display = show ? '' : 'none';
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

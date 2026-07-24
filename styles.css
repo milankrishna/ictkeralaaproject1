@@ -1,0 +1,601 @@
+/* =========================================================
+   LUMEN GALLERY — shared stylesheet
+   A midnight museum-wall aesthetic: charcoal walls, brass
+   track-lighting accents, framed artwork, placard typography.
+   ========================================================= */
+
+:root {
+  --wall: #131319;
+  --wall-deep: #0b0b10;
+  --surface: #1c1d25;
+  --surface-alt: #24252f;
+  --frame: #33343f;
+  --frame-light: #454653;
+  --gold: #c9a24b;
+  --gold-bright: #e6c877;
+  --gold-dim: rgba(201, 162, 75, 0.35);
+  --text: #ece8dd;
+  --text-muted: #9a9ba6;
+  --text-faint: #6d6e79;
+  --serif: "Playfair Display", "Georgia", serif;
+  --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --radius: 2px;
+  --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--wall);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(201, 162, 75, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 100%, rgba(201, 162, 75, 0.04) 0%, transparent 45%);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+a {
+  color: var(--gold-bright);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.text-muted-gallery {
+  color: var(--text-muted) !important;
+}
+
+/* ---------- Reveal animation ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- Navbar ---------- */
+.gallery-navbar {
+  background-color: rgba(11, 11, 16, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--frame);
+}
+
+.gallery-navbar .navbar-brand {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+
+.gallery-navbar .navbar-brand span {
+  color: var(--gold);
+}
+
+.gallery-navbar .nav-link {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem !important;
+  position: relative;
+}
+
+.gallery-navbar .nav-link:hover,
+.gallery-navbar .nav-link.active {
+  color: var(--text);
+}
+
+.gallery-navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.15rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.navbar-toggler {
+  border-color: var(--frame) !important;
+}
+
+/* ---------- Buttons ---------- */
+.btn-gold {
+  background-color: var(--gold);
+  border: 1px solid var(--gold);
+  color: #14151a;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.7rem 1.8rem;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-bright);
+  border-color: var(--gold-bright);
+  color: #14151a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -6px var(--gold-dim);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  border: 1px solid var(--frame-light);
+  color: var(--text);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.7rem 1.8rem;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.btn-outline-gold:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  background: rgba(201, 162, 75, 0.06);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding: 8.5rem 0 6rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--frame);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 60%, var(--wall) 100%),
+    conic-gradient(from 200deg at 75% 20%, rgba(201,162,75,0.10), transparent 35%);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 1.05;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-bright);
+}
+
+.hero-lede {
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  max-width: 40rem;
+  line-height: 1.7;
+}
+
+/* ---------- Spotlight beam decoration ---------- */
+.spotlight {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,162,75,0.16) 0%, transparent 70%);
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -16px); }
+}
+
+/* ---------- Section headers ---------- */
+.section-head {
+  margin-bottom: 3rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.divider-gold {
+  width: 54px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0.9rem 0 1.2rem;
+}
+
+/* ---------- Framed artwork card (signature element) ---------- */
+.frame-card {
+  background: var(--surface);
+  border: 1px solid var(--frame);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  transition: transform 380ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 380ms ease, border-color 380ms ease;
+  position: relative;
+}
+
+.frame-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0);
+  transition: box-shadow var(--transition);
+  pointer-events: none;
+}
+
+.frame-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-dim);
+  box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.65), 0 0 0 1px var(--gold-dim);
+}
+
+.frame-card:hover::after {
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.25);
+}
+
+.frame-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--wall-deep);
+}
+
+.frame-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 600ms ease;
+  filter: saturate(0.92) brightness(0.96);
+}
+
+.frame-card:hover .frame-media img {
+  transform: scale(1.06);
+  filter: saturate(1.05) brightness(1);
+}
+
+.frame-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.frame-card:hover .frame-media::before {
+  opacity: 1;
+}
+
+/* placard — the museum wall tag */
+.placard {
+  padding: 1.1rem 1.25rem 1.3rem;
+  border-top: 1px solid var(--frame);
+}
+
+.placard .art-title {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+
+.placard .art-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.55rem;
+}
+
+.placard .art-meta span {
+  color: var(--text-faint);
+}
+
+.placard .art-link {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.placard .art-link:hover {
+  color: var(--gold-bright);
+}
+
+.placard .art-link svg {
+  transition: transform var(--transition);
+}
+
+.placard .art-link:hover svg {
+  transform: translateX(4px);
+}
+
+.stretched-link-wrap {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.stretched-link-wrap:hover {
+  color: inherit;
+}
+
+/* ---------- Category filter pills (art-display page) ---------- */
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--frame);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  transition: all var(--transition);
+}
+
+.filter-pill:hover {
+  border-color: var(--gold-dim);
+  color: var(--text);
+}
+
+.filter-pill.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #14151a;
+  font-weight: 600;
+}
+
+/* ---------- Auth pages (login / signup) ---------- */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.auth-visual {
+  position: relative;
+  background: var(--wall-deep);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.auth-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.auth-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,11,16,0.2) 0%, rgba(11,11,16,0.96) 92%);
+}
+
+.auth-visual-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+}
+
+.auth-form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-card .form-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.auth-card .form-control {
+  background: var(--surface);
+  border: 1px solid var(--frame);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.auth-card .form-control:focus {
+  background: var(--surface);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+  color: var(--text);
+}
+
+.auth-card .form-control::placeholder {
+  color: var(--text-faint);
+}
+
+.auth-card .form-check-input {
+  background-color: var(--surface);
+  border-color: var(--frame-light);
+}
+
+.auth-card .form-check-input:checked {
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
+.auth-card .form-check-label {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.divider-or {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 1.6rem 0;
+}
+
+.divider-or::before,
+.divider-or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--frame);
+}
+
+/* ---------- Detail page ---------- */
+.detail-media {
+  background: var(--wall-deep);
+  border: 1px solid var(--frame);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  position: relative;
+}
+
+.detail-media::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(201, 162, 75, 0.25);
+  pointer-events: none;
+}
+
+.detail-media img {
+  width: 100%;
+  display: block;
+}
+
+.detail-meta-row {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--frame);
+  border-bottom: 1px solid var(--frame);
+  margin: 1.6rem 0;
+}
+
+.detail-meta-row .meta-item .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.3rem;
+}
+
+.detail-meta-row .meta-item .value {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.detail-desc {
+  color: var(--text-muted);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+.badge-category {
+  display: inline-block;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-bright);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Footer ---------- */
+.gallery-footer {
+  border-top: 1px solid var(--frame);
+  padding: 3rem 0 2rem;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+.gallery-footer a {
+  color: var(--text-muted);
+}
+
+.gallery-footer a:hover {
+  color: var(--gold-bright);
+}
+
+/* ---------- Misc ---------- */
+.small-caps-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+section {
+  scroll-margin-top: 90px;
+}

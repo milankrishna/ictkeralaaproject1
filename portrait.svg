@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="portraitBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b1710"/>
+      <stop offset="100%" stop-color="#120a08"/>
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8a85c"/>
+      <stop offset="60%" stop-color="#c9793f"/>
+      <stop offset="100%" stop-color="#8a4a2a"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5c2c17" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5c2c17" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#portraitBg)"/>
+
+  <!-- back halo -->
+  <circle cx="430" cy="290" r="230" fill="#c9793f" opacity="0.08"/>
+
+  <!-- shoulders -->
+  <path d="M 230 600 Q 260 430 400 410 Q 540 430 570 600 Z" fill="url(#faceGrad)"/>
+
+  <!-- neck -->
+  <rect x="360" y="360" width="80" height="90" fill="#c9793f"/>
+
+  <!-- face - faceted geometric planes -->
+  <polygon points="400,140 480,190 470,300 400,340 330,300 320,190" fill="url(#faceGrad)"/>
+  <polygon points="400,140 470,300 400,340 400,220" fill="url(#shadowGrad)" opacity="0.5"/>
+  <polygon points="330,190 400,140 400,220 350,250" fill="#f2c17e" opacity="0.6"/>
+
+  <!-- jaw shading -->
+  <polygon points="330,300 400,340 470,300 460,330 400,360 340,330" fill="#7a3d20" opacity="0.7"/>
+
+  <!-- hair mass -->
+  <path d="M 315 200 Q 300 100 400 90 Q 500 100 485 200 Q 470 150 400 150 Q 330 150 315 200 Z" fill="#1c0f09"/>
+
+  <!-- simplified eye marks -->
+  <polygon points="355,225 380,222 378,235 356,236" fill="#1c0f09" opacity="0.85"/>
+  <polygon points="425,222 450,225 447,236 424,235" fill="#1c0f09" opacity="0.85"/>
+
+  <!-- nose plane -->
+  <polygon points="398,235 412,235 405,285" fill="#a85f34" opacity="0.7"/>
+
+  <!-- mouth mark -->
+  <polygon points="378,300 425,300 415,310 388,310" fill="#6b3016" opacity="0.8"/>
+
+  <!-- amber dust flecks -->
+  <g fill="#f2c17e" opacity="0.5">
+    <circle cx="120" cy="120" r="2"/>
+    <circle cx="650" cy="180" r="1.6"/>
+    <circle cx="700" cy="450" r="2.2"/>
+    <circle cx="90" cy="480" r="1.8"/>
+    <circle cx="600" cy="90" r="1.4"/>
+  </g>
+</svg>
