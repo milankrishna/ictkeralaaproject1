@@ -1,4 +1,4 @@
-# Lumen Gallery — Assignment 1
+# Veloura gallery — Assignment 1
 
 A 9-page online art gallery built with **HTML5, CSS3, and Bootstrap 5**. The theme is a midnight museum wall: dark gallery rooms, brass "track-lighting" gold accents, and framed artwork cards labelled like real museum placards.
 
